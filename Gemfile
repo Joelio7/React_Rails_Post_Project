@@ -4,14 +4,14 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
+#responders gem to use respond_to in all controller methods
+gem 'responders'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
 # Use PG as the database for Active Record
 gem 'pg', '~> 0.18.4'
 #spectre sass gem for for spectre library
-gem 'spectre_scss' 
+gem 'spectre_scss'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
