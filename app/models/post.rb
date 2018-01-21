@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 include Math
-before_save :set_factorial
+
 
   private
   # Setting our random factorial

@@ -8,11 +8,14 @@ class Post extends Component {
     }
   }
   handleEdit() {
+    let randomNumber = Math.floor(Math.random() * 10) + 1
+    let factorial = this.props.handleFactorial(randomNumber)
+    console.log(factorial)
     if(this.state.editable) {
       let title = this.refs.title.value;
       let id = this.props.post.id;
-      let postBody = this.refs.body.value;
-      let post = {id: id , title: title , body: postBody}
+      let body = this.refs.body.value;
+      let post = {id: id , title: title , body: body, factorial: factorial}
       this.props.handleUpdate(post)
     }
       this.setState({editable: !this.state.editable})

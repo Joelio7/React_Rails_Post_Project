@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import AllPosts from './_all_posts.js.jsx'
 import NewPost from './_new_post.js.jsx'
-
 import $ from "jquery"
+
 class Body extends Component {
   constructor(props) {
     super(props)
@@ -18,6 +18,18 @@ class Body extends Component {
     let newState = this.state.posts.concat(post);
     this.setState({ posts: newState })
   }
+
+  factorialCalculator(randomNumber) {
+    let result = randomNumber;
+    if (randomNumber === 0 || randomNumber === 1)
+      return 1;
+    while (randomNumber > 1) {
+      randomNumber--;
+      result *= randomNumber;
+    }
+    return result;
+  }
+
   handleDelete(id) {
     $.ajax({
         url: `/api/v1/posts/${id}`,
@@ -28,12 +40,14 @@ class Body extends Component {
       })
   }
   handleUpdate(post) {
+    let randomNumber = Math.floor(Math.random() * 10) + 1
+    let factorial = this.factorialCalculator(randomNumber)
+    post.factorial = factorial
     $.ajax({
       url: `/api/v1/posts/${post.id}`,
       type: 'PUT',
       data: { post: post },
       success: () => {
-        console.log("I did it")
         this.updatePosts(post)
       }
     }
@@ -52,11 +66,10 @@ class Body extends Component {
   render() {
   return (
     <div>
-      <AllPosts posts={this.state.posts} handleDelete={this.handleDelete.bind(this)} onUpdate={this.handleUpdate.bind(this)} />
-      <NewPost handleSubmit={this.handleSubmit.bind(this)}  />
+      <AllPosts posts={this.state.posts} handleDelete={this.handleDelete.bind(this)} onUpdate={this.handleUpdate.bind(this) } factorialCalculator={this.factorialCalculator.bind(this)}/>
+      <NewPost handleSubmit={this.handleSubmit.bind(this)} factorialCalculator={this.factorialCalculator.bind(this)}  />
     </div>
   )
 }
 }
-
 export default Body;

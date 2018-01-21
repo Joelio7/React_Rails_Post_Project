@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import Header from './components/_header.js.jsx';
 import Body from './components/_body.js.jsx';
 
-
-
 class Main extends Component {
   render() {
     return (
