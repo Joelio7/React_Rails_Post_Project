@@ -14,11 +14,11 @@ class Api::V1::PostsController < Api::V1::BaseController
   def update
     post = Post.find(params["id"])
     post.update_attributes(post_params)
-    respond_with item, json: post
+    respond_with post, json: post
   end
 
   private
     def post_params
-      params.require(:post).permit(:title, :body, :published,:factorial)
+      params.require(:post).permit(:title, :body, :published, :factorial)
     end
 end

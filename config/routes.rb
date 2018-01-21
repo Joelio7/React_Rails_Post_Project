@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'posts#index'
+  root 'spa#index'
   resources :posts
 
   namespace :api do
