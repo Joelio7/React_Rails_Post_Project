@@ -18,7 +18,8 @@ class AllPosts extends Component {
   render() {
     const posts = this.props.posts.map((post) => {
       return (
-        <div key={post.id}>
+
+        <div className="post" key={post.id}>
           <Post post={post}
            handleDelete={this.handleDelete.bind(this, post.id)}
            handleUpdate={this.onUpdate.bind(this)}handleFactorial={this.updateFactorial.bind(this)}/>

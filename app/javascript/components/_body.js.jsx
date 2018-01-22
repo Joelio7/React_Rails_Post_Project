@@ -64,12 +64,12 @@ class Body extends Component {
       this.setState({ posts: newPosts });
     }
   render() {
-  return (
-    <div>
-      <AllPosts posts={this.state.posts} handleDelete={this.handleDelete.bind(this)} onUpdate={this.handleUpdate.bind(this) } factorialCalculator={this.factorialCalculator.bind(this)}/>
-      <NewPost handleSubmit={this.handleSubmit.bind(this)} factorialCalculator={this.factorialCalculator.bind(this)}  />
-    </div>
-  )
-}
+    return (
+       <div>
+        <AllPosts posts={this.state.posts} handleDelete={this.handleDelete.bind(this)} onUpdate={this.handleUpdate.bind(this) } factorialCalculator={this.factorialCalculator.bind(this)}/>
+        <NewPost handleSubmit={this.handleSubmit.bind(this)} factorialCalculator={this.factorialCalculator.bind(this)}  />
+      </div>
+    )
+  }
 }
 export default Body;
