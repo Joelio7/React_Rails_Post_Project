@@ -1,3 +1,29 @@
-p {
-  color:blue;
+.main-content {
+  text-align: center;
+}
+
+.posts {
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  border: 1px  solid black;
+  margin-right: 30px;
+  word-wrap: break-word;
+  position:relative;
+
+}
+.buttons {
+  position: absolute;
+  right:    33%;
+  bottom:   15%;
+  .delete {
+    margin-left: 10px;
+    width: 69px;
+  }
+}
+.post-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }

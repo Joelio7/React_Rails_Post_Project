@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import  url from '../style/application.scss';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import Header from '../components/_header.js.jsx';
 import Body from '../components/_body.js.jsx';
 

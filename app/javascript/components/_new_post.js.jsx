@@ -18,10 +18,10 @@ class NewPost extends Component {
   }
   render() {
     return (
-      <div>
-        <input ref='title' placeholder='Enter the title for the post' />
-        <input ref='postBody' placeholder='Body Text' />
-        <button onClick={this.handleClick.bind(this)}>Submit</button>
+      <div className="form-group">
+        <input className="form-input" ref='title' placeholder='Enter the title for the post' />
+        <textarea className="form-input" ref='postBody' placeholder='Body Text' />
+        <button className="btn btn-success" onClick={this.handleClick.bind(this)}>Submit</button>
       </div>
     )
   }

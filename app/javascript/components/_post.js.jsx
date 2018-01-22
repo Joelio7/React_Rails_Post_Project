@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Truncate from 'react-truncate'
 
 class Post extends Component {
   constructor() {
@@ -8,14 +9,11 @@ class Post extends Component {
     }
   }
   handleEdit() {
-    let randomNumber = Math.floor(Math.random() * 10) + 1
-    let factorial = this.props.handleFactorial(randomNumber)
-    console.log(factorial)
     if(this.state.editable) {
       let title = this.refs.title.value;
       let id = this.props.post.id;
       let body = this.refs.body.value;
-      let post = {id: id , title: title , body: body, factorial: factorial}
+      let post = {id: id , title: title , body: body}
       this.props.handleUpdate(post)
     }
       this.setState({editable: !this.state.editable})
@@ -23,12 +21,15 @@ class Post extends Component {
   render() {
     let title = this.state.editable ? <input type='text' ref='title' defaultValue={this.props.post.title} /> : <h3>{this.props.post.title}</h3>;
     let body = this.state.editable ? <input type='text' ref='body' defaultValue={this.props.post.body} />: <p>{this.props.post.body}</p>;
+    let truncate = this.state.editable ? <div>{body}</div>:  <div><Truncate lines={3} > {body}</Truncate></div>;
     return (
       <div>
         {title}
-        {body}
-        <button onClick={this.props.handleDelete} >Delete</button>
-        <button onClick={this.handleEdit.bind(this)}> {this.state.editable ? 'Submit' : 'Edit' } </button>
+        {truncate}
+        <div className="buttons">
+          <button className="btn btn-error"onClick={this.props.handleDelete} >Delete</button>
+          <button className="btn btn-primary delete" onClick={this.handleEdit.bind(this)}> {this.state.editable ? 'Submit' : 'Edit' } </button>
+        </div>
       </div>
     )
   }
