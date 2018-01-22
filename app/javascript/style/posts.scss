@@ -1,29 +1,60 @@
-.main-content {
-  text-align: center;
-}
+
 
 .posts {
   text-align: center;
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   border: 1px  solid black;
-  margin-right: 30px;
+  border-radius: 5px;
+  margin: 0 auto;
   word-wrap: break-word;
   position:relative;
-
+}
+.form-section {
+   width: 100vw;
+  height: 800px;
+  margin-left: -33px;
+  text-align: center;
+  background-color: #24292e;
+  margin-top: 100px;
+  color: #fff;
+}
+.form-container {
+     border-radius: 3px;
+     font: 95% Arial, Helvetica, sans-serif bold;
+     color: #414a51;
+     max-width: 400px;
+     margin: 0 auto;
+     padding-top: 50px;
+     padding: 16px;
+     background: #DFE2DB;
+}
+#body-text{
+  height: 300px;
+}
+.cardContent {
+   margin-top:  50px;
 }
 .buttons {
   position: absolute;
   right:    33%;
   bottom:   15%;
-  .delete {
+  .edit {
     margin-left: 10px;
     width: 69px;
   }
 }
+.success-button {
+  margin-top: 10px;
+}
 .post-container{
+  text-align: center;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
+}
+.title-area {
+  margin: 0 auto;
+  text-align: center;
 }

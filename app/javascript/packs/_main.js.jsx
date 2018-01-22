@@ -10,7 +10,7 @@ import Body from '../components/_body.js.jsx';
 class Main extends Component {
   render() {
     return (
-      <div>
+      <div className="main-content">
         <Header />
          <Body />
       </div>

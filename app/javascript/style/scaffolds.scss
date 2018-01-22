@@ -1,5 +1,4 @@
 body {
-  background-color: #fff;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -84,4 +83,11 @@ div {
 
 label {
   display: block;
+}
+
+#fixed-button {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-weight: bold;
 }

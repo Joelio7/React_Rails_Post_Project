@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 import AllPosts from './_all_posts.js.jsx'
 import NewPost from './_new_post.js.jsx'
@@ -18,7 +19,11 @@ class Body extends Component {
     let newState = this.state.posts.concat(post);
     this.setState({ posts: newState })
   }
-
+  handleScrollToElement() {
+    const element = document.getElementById('form-begin')
+    const tesNode = ReactDOM.findDOMNode(element)
+    window.scrollTo(0, tesNode.offsetTop);
+}
   factorialCalculator(randomNumber) {
     let result = randomNumber;
     if (randomNumber === 0 || randomNumber === 1)
@@ -68,6 +73,7 @@ class Body extends Component {
        <div>
         <AllPosts posts={this.state.posts} handleDelete={this.handleDelete.bind(this)} onUpdate={this.handleUpdate.bind(this) } factorialCalculator={this.factorialCalculator.bind(this)}/>
         <NewPost handleSubmit={this.handleSubmit.bind(this)} factorialCalculator={this.factorialCalculator.bind(this)}  />
+          <button id="fixed-button" onClick={this.handleScrollToElement} className="btn btn-primary btn-block">Add a post</button>
       </div>
     )
   }

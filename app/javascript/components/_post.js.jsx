@@ -21,14 +21,16 @@ class Post extends Component {
   render() {
     let title = this.state.editable ? <input type='text' ref='title' defaultValue={this.props.post.title} /> : <h3>{this.props.post.title}</h3>;
     let body = this.state.editable ? <input type='text' ref='body' defaultValue={this.props.post.body} />: <p>{this.props.post.body}</p>;
-    let truncate = this.state.editable ? <div>{body}</div>:  <div><Truncate lines={3} > {body}</Truncate></div>;
+    let truncate = this.state.editable ? <div>{body}</div>:  <div><Truncate lines={2} > {body}</Truncate></div>;
     return (
       <div>
-        {title}
-        {truncate}
+        <div className="cardContent">
+          {title}
+          {truncate}
+        </div>
         <div className="buttons">
           <button className="btn btn-error"onClick={this.props.handleDelete} >Delete</button>
-          <button className="btn btn-primary delete" onClick={this.handleEdit.bind(this)}> {this.state.editable ? 'Submit' : 'Edit' } </button>
+          <button className="btn btn-primary edit" onClick={this.handleEdit.bind(this)}> {this.state.editable ? 'Submit' : 'Edit' } </button>
         </div>
       </div>
     )

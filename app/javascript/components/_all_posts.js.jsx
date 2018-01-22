@@ -51,7 +51,10 @@ class AllPosts extends Component {
 
   render() {
     const posts = this.props.posts.map((post) => {
+      let postLength = post.body.length > 80 ? <div onClick={() => this.openModal(post)}>Read More</div>:  <div></div>;
+
       return (
+
         <div className="posts" key={post.id}>
 
           <Modal
@@ -63,15 +66,18 @@ class AllPosts extends Component {
             <div>{this.state.activePostBody}</div>
         </Modal>
 
+
         <Post post={post}
           handleDelete={this.handleDelete.bind(this, post.id)}
           handleUpdate={this.onUpdate.bind(this)}handleFactorial={this.updateFactorial.bind(this)}/>
-          <div onClick={() => this.openModal(post)}>Read More</div>
+             {post.author}
+             {postLength}
         </div>
 
       )
     })
     return (
+
         <div className="post-container">
             {posts}
         </div>
