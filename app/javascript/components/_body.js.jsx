@@ -45,6 +45,8 @@ class Body extends Component {
       })
   }
   handleUpdate(post) {
+    // For updates we set the factorial logic directly in the body component
+    // Since that is where the handle update is happening.
     let randomNumber = Math.floor(Math.random() * 10) + 1
     let factorial = this.factorialCalculator(randomNumber)
     post.factorial = factorial
@@ -60,7 +62,7 @@ class Body extends Component {
   updatePosts(post) {
     let posts = this.state.posts.filter((i) => { return i.id != post.id })
     posts.push(post)
-   this.setState({posts: posts });
+    this.setState({posts: posts });
   }
   removeItemClient(id) {
     let newPosts = this.state.posts.filter((post) => {

@@ -5,14 +5,12 @@ import PropTypes from 'prop-types';
 import Header from '../components/_header.js.jsx';
 import Body from '../components/_body.js.jsx';
 
-
-
 class Main extends Component {
   render() {
     return (
       <div className="main-content">
         <Header />
-         <Body />
+        <Body />
       </div>
     )
   }
