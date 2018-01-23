@@ -2,9 +2,11 @@
 
 .posts {
   text-align: center;
+  color: #091e42;
+  background-color: white;
+  box-shadow: 0 4px 8px -2px rgba(9,30,66,.28), 0 0 1px rgba(9,30,66,.3);
   height: 400px;
   width: 400px;
-  border: 1px  solid black;
   border-radius: 5px;
   margin: 0 auto;
   word-wrap: break-word;
@@ -18,6 +20,12 @@
   background-color: #24292e;
   margin-top: 100px;
   color: #fff;
+  h1{
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.14285714;
+
+  }
 }
 .form-container {
      border-radius: 3px;
@@ -37,7 +45,8 @@
 }
 .buttons {
   position: absolute;
-  right:    33%;
+  right: 25%;
+  left: 25%;
   bottom:   15%;
   .edit {
     margin-left: 10px;
@@ -57,4 +66,13 @@
 .title-area {
   margin: 0 auto;
   text-align: center;
+}
+#modal-content{
+  line-height: 170%;
+  margin-bottom: 1.1em;
+  text-align: left;
+  font-size: 1.075em;
+}
+#close-button {
+
 }

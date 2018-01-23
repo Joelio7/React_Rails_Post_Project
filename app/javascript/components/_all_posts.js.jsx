@@ -10,6 +10,7 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
+
   }
 };
 class AllPosts extends Component {
@@ -18,7 +19,8 @@ class AllPosts extends Component {
       this.state = {
         modalIsOpen: false,
         activePostId: null,
-        activePostBody: ''
+        activePostBody: '',
+        activePostTitle: ''
       };
 
       this.openModal = this.openModal.bind(this);
@@ -29,7 +31,9 @@ class AllPosts extends Component {
     this.setState({
       modalIsOpen: true,
       activePostId: post.id,
-      activePostBody: post.body
+      activePostBody: post.body,
+      activePostTitle: post.title
+
     });
   }
 
@@ -62,14 +66,17 @@ class AllPosts extends Component {
             onRequestClose={this.closeModal}
             ariaHideApp={false}
           >
-            <button onClick={this.closeModal}>close</button>
-            <div>{this.state.activePostBody}</div>
+            <h1>{this.state.activePostTitle}</h1>
+            <div id="modal-content">{this.state.activePostBody}</div>
+            <button className="btn btn-default btn-block" id="close-button" onClick={this.closeModal}>close</button>
+
         </Modal>
 
 
         <Post post={post}
           handleDelete={this.handleDelete.bind(this, post.id)}
           handleUpdate={this.onUpdate.bind(this)}handleFactorial={this.updateFactorial.bind(this)}/>
+               <p>by:</p>
              {post.author}
              {postLength}
         </div>

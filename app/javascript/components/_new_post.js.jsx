@@ -22,15 +22,15 @@ class NewPost extends Component {
     return (
       <div id="form-begin"className="form-section">
       <h1 > Post a story </h1>
-      <h4> Write a story that wins </h4>
+      <h4> Write something that wins </h4>
       <div className='form-container'>
         <div className="form-group">
-          <label className="form-label" for="author">Your Name</label>
-          <input className="form-input" ref='author' />
+          <label  className="form-label" for="author">Your Name</label>
+          <input minlength="5" maxlength="30" className="form-input" ref='author' required/>
           <label className="form-label" for="title">Post Title</label>
-          <input className="form-input" ref='title' />
+          <input minlength="5" maxlength="30" className="form-input" ref='title'required/>
           <label className="form-label" for="body">Post Body</label>
-          <textarea className="form-input" id='body-text' ref='postBody' />
+          <textarea minlength="50" className="form-input" id='body-text' ref='postBody'required />
           <button className="btn btn-default success-button" onClick={this.handleClick.bind(this)}>Submit</button>
         </div>
       </div>
