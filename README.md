@@ -1,4 +1,4 @@
-# Stukent Champ Challenge
+# Rails React Storyboard Project
 
 A Story Post Board using Rails and React
 Insturctions:
