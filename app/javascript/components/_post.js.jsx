@@ -19,7 +19,7 @@ class Post extends Component {
       this.setState({editable: !this.state.editable})
     }
   render() {
-    let title = this.state.editable ? <input minlength="5" maxlength="30" type='text' ref='title' defaultValue={this.props.post.title} /> : <h3>{this.props.post.title + " " + this.props.post.factorial} </h3>;
+    let title = this.state.editable ? <input minlength="5" maxlength="30" type='text' ref='title' defaultValue={this.props.post.title} /> : <h3>{this.props.post.title}</h3>;
     let body = this.state.editable ? <textarea minlength="50"  type='text' ref='body' defaultValue={this.props.post.body} />: <p>{this.props.post.body}</p>;
     let truncate = this.state.editable ? <div>{body}</div>:  <div><Truncate lines={3} > {body}</Truncate></div>;
     return (
